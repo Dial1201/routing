@@ -1,6 +1,7 @@
 <?php
 
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Route;
@@ -19,12 +20,16 @@ $collection->add('show', $showRoute);
 
 $matcher = new UrlMatcher($collection, new RequestContext());
 
+$generator = new UrlGenerator($collection, new RequestContext());
+
+
+
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/';
 
 try {
     $currentRoute = $matcher->match($pathInfo);
 
-
+    dump($currentRoute);
     $page = $currentRoute['_route'];
 
     require_once "pages/$page.php";

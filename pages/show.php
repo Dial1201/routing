@@ -42,7 +42,7 @@ $task = $data[$id];
     <p>
         La tâche est <strong><?= $task['completed'] ? "complétée" : "encore à faire" ?> !</strong>
     </p>
-    <a href="index.php">Retour à la liste</a> ou <a href="index.php?page=create">Créer une autre tâche</a>
+    <a href="<?= $generator->generate('list'); ?>">Retour à la liste</a> ou <a href="<?= $generator->generate('create'); ?>">Créer une autre tâche</a>
 </body>
 
 </html>
