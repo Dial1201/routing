@@ -10,7 +10,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $listeRoute = new Route('/');
 $createRoute = new Route('/create');
-$showRoute = new Route('/show');
+$showRoute = new Route('/show/{id}');
 
 $collection = new RouteCollection;
 $collection->add('list', $listeRoute);
@@ -22,10 +22,10 @@ $matcher = new UrlMatcher($collection, new RequestContext());
 $pathInfo = $_SERVER['PATH_INFO'] ?? '/';
 
 try {
-    $result = $matcher->match($pathInfo);
-    dd($result);
+    $currentRoute = $matcher->match($pathInfo);
 
-    $page = $result['_route'];
+
+    $page = $currentRoute['_route'];
 
     require_once "pages/$page.php";
 } catch (ResourceNotFoundException $e) {
