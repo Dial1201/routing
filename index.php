@@ -1,5 +1,26 @@
 <?php
 
+use Symfony\Component\Routing\Matcher\UrlMatcher;
+use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\Routing\Route;
+use Symfony\Component\Routing\RouteCollection;
+
+require __DIR__ . '/vendor/autoload.php';
+
+$listeRoute = new Route('/');
+$createRoute = new Route('/create');
+$showRoute = new Route('/show');
+
+$collection = new RouteCollection;
+$collection->add('list', $listeRoute);
+$collection->add('create', $createRoute);
+$collection->add('show', $showRoute);
+
+$matcher = new UrlMatcher($collection, new RequestContext());
+
+$result = $matcher->match('/');
+var_dump($result);
+die();
 /**
  * BIENVENUE DANS CE COURS SUR LE COMPOSANT SYMFONY/ROUTING !
  * ----------------------
