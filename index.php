@@ -11,12 +11,17 @@ require __DIR__ . '/vendor/autoload.php';
 
 $listeRoute = new Route('/');
 $createRoute = new Route('/create');
-$showRoute = new Route('/show/{id}');
+$showRoute = new Route('/show/{id<\d+>?100}');
+$helloRoute = new Route(
+    '/hello/{name}',
+    ['name' => 'World', 'parameters' => '17']
+);
 
 $collection = new RouteCollection;
 $collection->add('list', $listeRoute);
 $collection->add('create', $createRoute);
 $collection->add('show', $showRoute);
+$collection->add('hello', $helloRoute);
 
 $matcher = new UrlMatcher($collection, new RequestContext());
 
