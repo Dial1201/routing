@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'e46bcbd9f6a34fb99b60d7a63620055cbbd40a3b',
+    'reference' => '5fd6d0555db8f596cc7351175933b8ab4b8293fc',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,34 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'e46bcbd9f6a34fb99b60d7a63620055cbbd40a3b',
+      'reference' => '5fd6d0555db8f596cc7351175933b8ab4b8293fc',
+    ),
+    'doctrine/annotations' => 
+    array (
+      'pretty_version' => '1.12.1',
+      'version' => '1.12.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b17c5014ef81d212ac539f07a1001832df1b6d3b',
+    ),
+    'doctrine/cache' => 
+    array (
+      'pretty_version' => '1.10.2',
+      'version' => '1.10.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '13e3381b25847283a91948d04640543941309727',
+    ),
+    'doctrine/lexer' => 
+    array (
+      'pretty_version' => '1.2.1',
+      'version' => '1.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e864bbf5904cb8f5bb334f99209b48018522f042',
     ),
     'symfony/config' => 
     array (
