@@ -2,21 +2,25 @@
 
 use App\Controller\TaskController;
 use App\Controller\HelloController;
-use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\Route;
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
+use Symfony\Component\Routing\Loader\PhpFileLoader;
+use Symfony\Component\Routing\Loader\YamlFileLoader;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use Symfony\Component\Routing\Loader\PhpFileLoader;
 
 require __DIR__ . '/vendor/autoload.php';
 
 
-$loader = new PhpFileLoader(new FileLocator(__DIR__ . '/config'));
+// $loader = new PhpFileLoader(new FileLocator(__DIR__ . '/config'));
+// $collection = $loader->load('routes.php');
 
-$collection = $loader->load('routes.php');
+$loader = new YamlFileLoader(new FileLocator(__DIR__ . '/config'));
+$collection = $loader->load('routes.yaml');
+
 
 
 $matcher = new UrlMatcher($collection, new RequestContext());
