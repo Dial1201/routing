@@ -6,6 +6,6 @@ class HelloController
 {
     public function sayHello(array $currentRoute)
     {
-        require __DIR__ . '/../../pages/hello.php';
+        require __DIR__ . '/../../pages/hello.html.php';
     }
 }
